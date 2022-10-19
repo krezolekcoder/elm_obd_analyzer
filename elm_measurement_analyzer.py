@@ -8,19 +8,13 @@ class ELM_MeasurementAnalyzer:
 
         with open(csv_filename, newline='', encoding="utf-8") as csvfile:
             trip_reader = list(csv.reader(csvfile, delimiter=';', quotechar='|'))
-        
-            # for dict_key in trip_reader[0]:
-            #     if(len(dict_key) > 0):
-            #         key = dict_key.split('"')[1]
-            #         measurement_dictionary[dict_key] = None
+
+            # TODO - refactor this 
 
             measurement_list_first = [] 
             measurement_list_second = []
             measurement_list_third = [] 
             measurement_list_fourth = [] 
-
-            measurements_list_of_lists = [] 
-
 
             for record in trip_reader[1:]:
                 measurement_list_first.append(record[0])
@@ -56,5 +50,4 @@ class ELM_MeasurementAnalyzer:
 
     
     def get_measurement(self) -> dict:
-
         return self.measurement

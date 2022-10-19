@@ -1,4 +1,3 @@
-import csv 
 import os
 import matplotlib.pyplot as plt 
 import numpy as np 
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     meas_analyzer = ELM_MeasurementAnalyzer(filepaths[0])
 
     measurement_dictionary = meas_analyzer.get_measurement()
-    
+
     meas_list =  measurement_dictionary['"[DASH] Poziom paliwa"']
 
     time_measurement = np.asarray([el[0] for el in meas_list]) / 60.0
